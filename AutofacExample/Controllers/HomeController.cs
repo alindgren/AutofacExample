@@ -8,8 +8,16 @@ namespace AutofacExample.Controllers
 {
     public class HomeController : Controller
     {
+        private ITestService testService;
+
+        public HomeController(ITestService testService)
+        {
+            this.testService = testService;
+        }
+
         public ActionResult Index()
         {
+            var testMessage = testService.GetTestString();
             return View();
         }
 

@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Autofac;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Owin;
 using Owin;
@@ -19,6 +20,9 @@ namespace AutofacExample
             DependencyResolver.SetResolver(resolver);
 
             // http://scottdorman.github.io/2016/03/17/integrating-asp.net-core-dependency-injection-in-mvc-4/
+
+            //var builder = new ContainerBuilder();
+            //builder.RegisterType<TestService>().As<ITestService>();
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -27,5 +31,7 @@ namespace AutofacExample
 
             services.AddMediatR(typeof(Startup));
         }
+
+        
     }
 }
