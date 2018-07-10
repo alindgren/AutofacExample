@@ -14,7 +14,7 @@ namespace AutofacExample
     {
         public string GetTestString()
         {
-            return "This is a test.";
+            return "This is a test2.";
         }
     }
 }
